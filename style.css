@@ -1,8 +1,15 @@
-/*titulo de la empresa*/
+/*titulos que este en el fondo verde*/
 .titulo{
     color: whitesmoke;
 }
-/*el cuerpo de las paginas*/
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
+/*el cuerpo de cada una de las paginas*/
 body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -28,9 +35,15 @@ body{
 .Barra_Navegacion .parte:hover{
     color: #4CAF50;
 }
+
 /*titulos de los archivos*/
 .Titulares{
     text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 /*seccion de quienes somos*/
 .quienes_somos{
@@ -43,7 +56,10 @@ body{
 }
 
 .imagen_inicial{
-    display: inline;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 /*mision y vison*/
@@ -66,6 +82,7 @@ body{
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     cursor: pointer;
+    background-image: url("trabajo.jpg");
 }
 /*animacion de mision*/
 .mision::before {
@@ -183,7 +200,6 @@ body{
     transform: translateY(0);
     visibility: visible;
 }
-
 /*colores de las caracteristicas del cemaforo*/
 .rojo{
     color: red;
@@ -198,39 +214,42 @@ body{
 }
 /*datos del registro*/
 .registro{
-    width: auto;
     display: flex;
-    background-color: white;
-    margin: 20px;
+    flex-wrap: wrap; /* Permite que se acomode en móviles */
+    gap: 20px;
+    justify-content: center;
 }
+
 /*formulario de mensaje*/
 .Formulario{
     margin-right: auto;
+    margin-left: 40px;
     margin: 20px;
     padding: 20px;
-    width: 600px;
     border: solid #a6d7a8;
 
 }
 /*donde estan posicionados los contactos*/
+.Contactos, .Formulario {
+    width: 100%;
+    max-width: 600px; /* Que no se estiren demasiado */
+    box-sizing: border-box;
+}
+
 .Contactos{
     margin: 20px;
     display: inline-block;
     padding: 20px;
-    width: 690px;
-    border: solid #a6d7a8;
+    border: solid green;
 }
 
 input{
+    padding: 20px;
     width: 320px;
-}
-
-.respuesta{
-    padding: 6%;
 }
 
 textarea{
-    width: 320px;
+    width: 360px;
 }
 
 .mensaje{
@@ -238,20 +257,16 @@ textarea{
     width: 190px;
     display: flex;
 }
-
-.logo{
-    width: 500px;
-    padding: 50px;
-}
 /*boton de enviar*/
 button{
-    padding: 10px;
-    width: 360px;
+    padding: 11px;
+    width: 370px;
 }
 
 .datos{
     display: flex;
     justify-content: space-around;
+    border: solid #a6d7a8;
 }
 
 h4{
@@ -278,25 +293,15 @@ li{
 
 .producto{
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    margin: 20px;
 }
 /*imagenes*/
 .imagen{
-    width: 300px;
-    margin-left: 5px;
-    margin-right: 3px;
-    display: block;
-    justify-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
+    max-width: 100%;
+    height: auto;
 }
-
-.imagen_inicial{
-    width: 1200px;
-    height: 450px;
-}
-
 /*titulo de la imagen*/
 .pro{
     display: flex;
@@ -327,6 +332,12 @@ nav a{
     font-weight: bold;
 }
 
+input, textarea, button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 main {
     padding: 2rem;
     max-width: 1000px;
@@ -345,18 +356,34 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .vision-mision {
         flex-direction: column;
+        align-items: center;
     }
     
     .mision, .vision {
         width: 100%;
-        margin-bottom: 1rem;
-    }
-    
-    .mision:hover, .vision:hover {
-        transform: translateY(-5px) scale(1.01);
     }
 }
 
+@media (max-width: 768px) {
+    .Barra_Navegacion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .parte {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
